@@ -1,13 +1,8 @@
 const parseNumber = (value) => {
-  if (!value) {
-    throw new Error('Некорректный ввод!');
-  }
 
-  let trimmedValue = value.trim();
+  const trimmedValue = value?.trim();
 
-  if (trimmedValue === '0') {
-    return 0;
-  } else if (!isFinite(Number(trimmedValue)) || !trimmedValue) {
+  if (!isFinite(Number(trimmedValue)) || !trimmedValue) {
     throw new Error('Некорректный ввод!');
   } else {
     return Number(trimmedValue);

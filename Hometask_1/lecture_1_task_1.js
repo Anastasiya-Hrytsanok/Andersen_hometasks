@@ -1,16 +1,11 @@
-let firstValue = window.prompt('Введите первое значение');
-let secondValue = window.prompt('Введите второе значение');
+const firstValue = prompt('Введите первое значение');
+const secondValue = prompt('Введите второе значение');
 
 const parseNumber = (value) => {
-  if (!value) {
-    throw new Error('Некорректный ввод!');
-  }
 
-  let trimmedValue = value.trim();
+  const trimmedValue = value?.trim();
 
-  if (trimmedValue === '0') {
-    return 0;
-  } else if (!isFinite(Number(trimmedValue)) || !trimmedValue) {
+  if (!isFinite(Number(trimmedValue)) || !trimmedValue) {
     throw new Error('Некорректный ввод!');
   } else {
     return Number(trimmedValue);
@@ -18,7 +13,7 @@ const parseNumber = (value) => {
 };
 
 const checkSystemConvertion = (value) => {
-  let parsedValue = parseNumber(value);
+  const parsedValue = parseNumber(value);
 
   if (2 <= parsedValue && parsedValue <= 36) {
     return parsedValue;
@@ -29,8 +24,8 @@ const checkSystemConvertion = (value) => {
 
 const convertNumberIntoSystem = (number, systemConversion) => {
   try {
-    let parsedNumber = parseNumber(number);
-    let parsedConvertionSystem = checkSystemConvertion(systemConversion);
+    const parsedNumber = parseNumber(number);
+    const parsedConvertionSystem = checkSystemConvertion(systemConversion);
 
     return parsedNumber.toString(parsedConvertionSystem);
   } catch (e) {
