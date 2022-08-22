@@ -2,7 +2,7 @@ const hasObjectType = (obj) => typeof obj === 'object' && obj !== null;
 const isNumber = (value) => typeof value === 'number' && !isNaN(value);
 
 const checkForArrayOfNumbers = (arr) => {
-  let notNumberInArr = arr.some((el) => !isNumber(el));
+  const notNumberInArr = arr.some((el) => !isNumber(el));
 
   if (!Array.isArray(arr) || notNumberInArr) {
     throw new Error('Invalid value');
