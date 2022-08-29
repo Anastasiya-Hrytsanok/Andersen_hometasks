@@ -30,41 +30,47 @@ const concatStrings = (str, separator = '') => {
 
 class Calculator {
   constructor(x, y) {
-    this.setX(x);
-    this.setY(y);
+    if (arguments.length > 2) {
+      throw new Error('Invalid value');
+    }
+
+    this.setX = this.setX.bind(this);
+    this.setY = this.setY.bind(this);
     this.logSum = this.logSum.bind(this);
     this.logMul = this.logMul.bind(this);
     this.logSub = this.logSub.bind(this);
     this.logDiv = this.logDiv.bind(this);
+    this.setX(x);
+    this.setY(y);
   }
 
-  setX(num) {
+  setX = (num) => {
     if (!Number.isFinite(num)) {
       throw new Error('Invalid value');
     }
 
     this.x = num;
-  }
+  };
 
-  setY(num) {
+  setY = (num) => {
     if (!Number.isFinite(num)) {
       throw new Error('Invalid value');
     }
 
     this.y = num;
-  }
+  };
 
-  logSum = () => this.x + this.y;
+  logSum = () => console.log(this.x + this.y);
 
-  logMul = () => this.x * this.y;
+  logMul = () => console.log(this.x * this.y);
 
-  logSub = () => this.x - this.y;
+  logSub = () => console.log(this.x - this.y);
 
   logDiv = () => {
     if (this.y === 0) {
       throw new Error('0 cannot be a divisor');
     }
 
-    return this.x / this.y;
-  }
+    console.log(this.x / this.y);
+  };
 }
