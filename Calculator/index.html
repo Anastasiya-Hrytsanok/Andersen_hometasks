@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
+    <title>Calculator</title>
+  </head>
+  <body>
+    <section class="calculator">
+      <input readonly type="text" id="currentResult" />
+      <textarea readonly></textarea>
+      <div class="grid-container">
+        <button class="grid-item number" id="seven">7</button>
+        <button class="grid-item number" id="eight">8</button>
+        <button class="grid-item number" id="nine">9</button>
+        <button
+          class="grid-item dopoperators disable-on-error"
+          id="plusOrMinus"
+        >
+          +/-
+        </button>
+        <button class="grid-item dopoperators disable-on-error" id="arrow">
+          →
+        </button>
+        <button class="grid-item number" id="four">4</button>
+        <button class="grid-item number" id="five">5</button>
+        <button class="grid-item number" id="six">6</button>
+        <button
+          class="grid-item operators disable-on-error"
+          id="multiplication"
+        >
+          ×
+        </button>
+        <button class="grid-item operators disable-on-error" id="division">
+          ÷
+        </button>
+        <button class="grid-item number" id="one">1</button>
+        <button class="grid-item number" id="two">2</button>
+        <button class="grid-item number" id="three">3</button>
+        <button class="grid-item operators disable-on-error" id="minus">
+          -
+        </button>
+        <button class="grid-item" id="equals">=</button>
+        <button class="grid-item" id="cancel">C</button>
+        <button class="grid-item number" id="zero">0</button>
+        <button class="grid-item disable-on-error" id="point">.</button>
+        <button class="grid-item operators disable-on-error" id="plus">
+          +
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
